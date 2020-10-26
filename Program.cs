@@ -7,17 +7,26 @@ namespace AddressBook
     {
         /// This list is to hold list of person details        
         public static List<PersonDetails> People = new List<PersonDetails>();
-        /// <summary>Defines the entry point of the application.</summary>
         /// <param name="args">The arguments.</param>
-        static void Main(string[] args)
+        /// <returns></returns>
+        public static void Main(string[] args)
         {
-
-            
-            
+            ///To display options to Choose
+            Console.WriteLine("********MENU*********");
+            Console.WriteLine("Choose the option you want to perform");
+            Console.WriteLine("1.Add Person Details");
+            ///Reading the option from user
+            int userChoice = Convert.ToInt32(Console.ReadLine());
+            switch (userChoice)
+            {
+                case 1:
+                    AddPerson();
+                    break;
+            }
         }
 
         ///Creating a method AddPerson to add person details  
-        public static void AddPerson()
+        static void AddPerson()
         {
             ///Creating a new Person object called person from the class PersonDetails
             PersonDetails person = new PersonDetails();
